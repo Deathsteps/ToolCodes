@@ -18,6 +18,8 @@ class Solution:
             # 如果 j = len, 则 while i < j and j = mid
             # 如果 j = len-1 , 则 while i <= j and j = mid - 1
             while i < j:
+                # i + j 可能会有越界问题，所以这里最好每次都用这种减法的方式求 mid
+                # mid = i + ((j - i) >> 1)
                 mid = (i + j) // 2
 
                 if nums[mid] == y:
